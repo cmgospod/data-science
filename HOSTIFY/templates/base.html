@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test inputs</title>
+    </head>
+
+    <body>
+        <h1>Test inputs</h1>
+        {% block content %}
+        <form action="/input" method="post">
+            <select name="input1">
+              <option value = "Option 1">Option 1</option>
+              <option value = "Option 2">Option 2</option>
+            </select>
+            <select name="input2">
+                <option value = "Option 3">Option 3</option>
+                <option value = "Option 4">Option 4</option>
+            </select>
+            <input type="submit" value="Process inputs">
+        </form>
+        {% endblock %}
+    </body>
+</html>
