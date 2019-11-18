@@ -8,15 +8,46 @@
         <h1>Test inputs</h1>
         {% block content %}
         <form action="/input" method="post">
-            <select name="input1">
-              <option value = "Option 1">Option 1</option>
-              <option value = "Option 2">Option 2</option>
+            <h2>Neighbourhood Group</h2>
+            <select name="neighbourhood_group">
+              <option value = "Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+              <option selected="selected" value = "Mitte">Mitte</option>
+              <option value = "Pankow">Pankow</option>
+              <option value = "Neukölln">Neukölln</option>
+              <option value = "Charlottenburg-Wilm.">Charlottenburg-Wilm.</option>
+              <option value = "Tempelhof - Schöneberg">Tempelhof - Schöneberg</option>
+              <option value = "Lichtenberg">Lichtenberg</option>
+              <option value = "Treptow - Köpenick">Treptow - Köpenick</option>
+              <option value = "Steglitz - Zehlendorf">Steglitz - Zehlendorf</option>
+              <option value = "Reinickendorf">Reinickendorf</option>
+              <option value = "Marzahn - Hellersdorf">Marzahn - Hellersdorf</option>
+              <option value = "Spandau">Spandau</option>
             </select>
-            <select name="input2">
-                <option value = "Option 3">Option 3</option>
-                <option value = "Option 4">Option 4</option>
+            <h2>Neighbourhood</h2>
+            <input type="text" name="neighbourhood" value="Brunnenstr. Süd">
+            <h2>Latitude</h2>
+            <input type="text" name="latitude" value="52.534537">
+            <h2>Longitude</h2>
+            <input type="text" name="longitude" value="13.402557">
+            <h2>Room Type</h2>
+            <select name="room_type">
+              <option value = "Private room">Private room</option>
+              <option selected="selected" value = "Entire home/apt">Entire home/apt</option>
+              <option value = "Shared room">Shared room</option>
             </select>
-            <input type="submit" value="Process inputs">
+            <h2>Minimum Nights</h2>
+            <input type="text" name="minimum_nights" value="4">
+            <h2>Calculated Host Listings Count</h2>
+            <input type="text" name="calculated_host_listings_count" value="4">
+            <h2>Availability/365</h2>
+            <input type="text" name="availability_365" value="141">
+            <h2>Bathrooms</h2>
+            <input type="text" name="bathrooms" value="1">
+            <h2>Bedrooms</h2>
+            <input type="text" name="bedrooms" value="1">
+            <p>
+                <input type="submit" value="Process inputs">
+            </p>
         </form>
         {% endblock %}
     </body>

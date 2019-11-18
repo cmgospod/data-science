@@ -11,9 +11,20 @@ def create_app():
 
     @app.route('/input', methods=['POST'])
     def retrieval():
-        result1 = request.values['input1']
-        result2 = request.values['input2']
-        output = result1 + " " + result2
+        neighbourhood_group = request.values['neighbourhood_group']
+        neighbourhood = request.values['neighbourhood']
+        latitude = request.values['latitude']
+        longitude = request.values['longitude']
+        room_type = request.values['room_type']
+        minimum_nights = request.values['minimum_nights']
+        calculated_host_listings_count = request.values['calculated_host_listings_count']
+        availability_365 = request.values['availability_365']
+        bathrooms = request.values['bathrooms']
+        bedrooms = request.values['bedrooms']
+        output = "{}, {}, {}, {}, {}, {}, {}, {}, {}, {}" \
+            .format(neighbourhood_group, neighbourhood, latitude, \
+                longitude, room_type, minimum_nights, calculated_host_listings_count, \
+                    availability_365, bathrooms, bedrooms)
         return output
     
     return app
