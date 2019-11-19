@@ -17,12 +17,12 @@ def create_app():
     def retrieval():
         neighbourhood_group = request.values['neighborhood_group']
         neighbourhood = request.values['neighborhood']
-        room_type = request.values['room_type']
-        minimum_nights = request.values['minimum_nights']
-        calculated_host_listings_count = request.values['calculated_host_listings_count']
-        availability_365 = request.values['availability_of_year']
-        bathrooms = request.values['bathroom_number']
-        bedrooms = request.values['bedroom_number']
+        room_type = int(request.values['room_type'])
+        minimum_nights = int(request.values['minimum_nights'])
+        calculated_host_listings_count = int(request.values['calculated_host_listings_count'])
+        availability_365 = int(request.values['availability_of_year'])
+        bathrooms = int(request.values['bathroom_number'])
+        bedrooms = int(request.values['bedroom_number'])
 
         predict_thing = pd.DataFrame(columns=['neighbourhood_group', 'neighbourhood', 'room_type', 'minimum_nights',
        'calculated_host_listings_count', 'availability_365', 'bathrooms',
