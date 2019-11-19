@@ -26,7 +26,7 @@ def create_app():
 
         predict_thing = pd.DataFrame(columns=['neighbourhood_group', 'neighbourhood', 'room_type', 'minimum_nights',
        'calculated_host_listings_count', 'availability_365', 'bathrooms',
-       'bedrooms'], data=[[1,1,1,1,1,1,1,1]])
+       'bedrooms'], data=[[1,1,room_type,minimum_nights,calculated_host_listings_count,availability_365,bathrooms,bedrooms]])
 
         prediction = pipeline.predict(predict_thing)[0].round(2)
 
