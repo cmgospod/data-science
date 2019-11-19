@@ -17,7 +17,7 @@ def create_app():
     def retrieval():
         neighbourhood_group = request.values['neighborhood_group']
         neighbourhood = request.values['neighborhood']
-        room_type = int(request.values['room_type'])
+        room_type = request.values['room_type']
         minimum_nights = int(request.values['minimum_nights'])
         calculated_host_listings_count = int(request.values['calculated_host_listings_count'])
         availability_365 = int(request.values['availability_of_year'])
@@ -26,7 +26,7 @@ def create_app():
 
         predict_thing = pd.DataFrame(columns=['neighbourhood_group', 'neighbourhood', 'room_type', 'minimum_nights',
        'calculated_host_listings_count', 'availability_365', 'bathrooms',
-       'bedrooms'], data=[[1,1,room_type,minimum_nights,calculated_host_listings_count,availability_365,bathrooms,bedrooms]])
+       'bedrooms'], data=[[1,1,1,minimum_nights,calculated_host_listings_count,availability_365,bathrooms,bedrooms]])
 
         prediction = pipeline.predict(predict_thing)[0].round(2)
 
