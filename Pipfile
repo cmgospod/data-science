@@ -7,8 +7,10 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-joblib = "*"
 gunicorn = "*"
+scikit-learn = "==0.21.3"
+lightgbm = "==2.3.0"
+joblib = "==0.14.0"
 
 [requires]
 python_version = "3.7"
