@@ -1,4 +1,8 @@
 from flask import Flask, render_template, request
+from joblib import load
+import pandas as pd
+
+pipeline = load('MODEL/model.joblib')
 
 
 def create_app():
@@ -19,10 +23,17 @@ def create_app():
         availability_365 = request.values['availability_of_year']
         bathrooms = request.values['bathroom_number']
         bedrooms = request.values['bedroom_number']
-        output = "{}, {}, {}, {}, {}, {}, {}, {}" \
-            .format(neighbourhood_group, neighbourhood, \
-                   room_type, minimum_nights, calculated_host_listings_count, \
-                   availability_365, bathrooms, bedrooms)
-        return output
+
+        predict_thing = pd.DataFrame(columns=['neighbourhood_group', 'neighbourhood', 'room_type', 'minimum_nights',
+       'calculated_host_listings_count', 'availability_365', 'bathrooms',
+       'bedrooms'], data=[[1,1,1,1,1,1,1,1]])
+
+        prediction = pipeline.predict(predict_thing)[0].round(2)
+
+        #output = "{}, {}, {}, {}, {}, {}, {}, {}" \
+        #    .format(neighbourhood_group, neighbourhood, \
+        #           room_type, minimum_nights, calculated_host_listings_count, \
+        #           availability_365, bathrooms, bedrooms)
+        return str(prediction)
     
     return app

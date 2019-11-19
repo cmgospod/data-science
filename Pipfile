@@ -11,6 +11,7 @@ gunicorn = "*"
 scikit-learn = "==0.21.3"
 lightgbm = "==2.3.0"
 joblib = "==0.14.0"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
