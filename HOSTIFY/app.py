@@ -34,7 +34,7 @@ def create_app():
                   availability_365, bathrooms, bedrooms]]
             )
 
-        prediction = pipeline.predict(predict_thing)[0].round(2)
+        prediction = int(pipeline.predict(predict_thing)[0].round())
 
         return str(prediction)
 
