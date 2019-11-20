@@ -1,50 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Test inputs</title>
+        <title>Hostify Flask App</title>
     </head>
 
     <body>
-        <h1>Test inputs</h1>
-        {% block content %}
-        <form action="/input" method="post">
-            <h2>Neighbourhood Group</h2>
-            <select name="neighborhood_group">
-              <option value = "Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-              <option selected="selected" value = "Mitte">Mitte</option>
-              <option value = "Pankow">Pankow</option>
-              <option value = "Neukölln">Neukölln</option>
-              <option value = "Charlottenburg-Wilm.">Charlottenburg-Wilm.</option>
-              <option value = "Tempelhof - Schöneberg">Tempelhof - Schöneberg</option>
-              <option value = "Lichtenberg">Lichtenberg</option>
-              <option value = "Treptow - Köpenick">Treptow - Köpenick</option>
-              <option value = "Steglitz - Zehlendorf">Steglitz - Zehlendorf</option>
-              <option value = "Reinickendorf">Reinickendorf</option>
-              <option value = "Marzahn - Hellersdorf">Marzahn - Hellersdorf</option>
-              <option value = "Spandau">Spandau</option>
-            </select>
-            <h2>Neighbourhood</h2>
-            <input type="text" name="neighborhood" value="Brunnenstr. Süd">
-            <h2>Room Type</h2>
-            <select name="room_type">
-              <option value = "Private room">Private room</option>
-              <option selected="selected" value = "Entire home/apt">Entire home/apt</option>
-              <option value = "Shared room">Shared room</option>
-            </select>
-            <h2>Minimum Nights</h2>
-            <input type="number" name="minimum_nights" value="4">
-            <h2>Calculated Host Listings Count</h2>
-            <input type="text" name="calculated_host_listings_count" value="4">
-            <h2>Availability/365</h2>
-            <input type="text" name="availability_of_year" value="141">
-            <h2>Bathrooms</h2>
-            <input type="text" name="bathroom_number" value="1">
-            <h2>Bedrooms</h2>
-            <input type="text" name="bedroom_number" value="1">
-            <p>
-                <input type="submit" value="Process inputs">
-            </p>
-        </form>
-        {% endblock %}
+        <h1>Welcome to the Hostify Flask app</h1>
+        <a href="https://github.com/bw-airbnbprice3/data-science" target="_blank">Click here</a> for the documentation.
     </body>
 </html>

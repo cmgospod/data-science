@@ -49,5 +49,3 @@ res = requests.post('http://127.0.0.1:5000/input', data=dictToSend)
 print ('Response from server:',res.text)
 ```
 
-**Note:** While a base HTML endpoint exists to send test inputs, it currently doesn't work properly due to some values not being expressed numerically. We also intend to remove this endpoint in the final release.
-
