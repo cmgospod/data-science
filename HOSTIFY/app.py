@@ -36,12 +36,15 @@ def create_app():
                       availability_365, bathrooms, bedrooms]]
                 )
             prediction = int(pipeline.predict(predict_thing)[0].round())
-            error = 19
-            low_range = prediction-error
+            # The Mean Absolute Error (MAE) is 19
+            # The Mean Absolute Percentage Error (MAPE) is 36.62%
+            # Use MAPE for low predicted prices and MAE for higher prices
+            error = prediction*.3662 if prediction*.3662<19 else 19
+            low_range = round(prediction-error)
             if low_range < 1:
                 low_range = 1
-            high_range = prediction+error
-            price_range = 'Predicted price range for your listing is: '
+            high_range = round(prediction+error)
+            price_range = 'Predicted price range for your listing is:'
             return price_range + f'€{low_range}-€{high_range}'
         except Exception as e:
             errorMessage = "Error processing input: {}".format(e)
