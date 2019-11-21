@@ -36,7 +36,13 @@ def create_app():
                     availability_365, bathrooms, bedrooms]]
                 )
             prediction = int(pipeline.predict(predict_thing)[0].round())
-            return str(prediction)
+            error = 19
+            low_range = prediction-error
+            if low_range < 1:
+                low_range = 1
+            high_range = prediction+error
+            return f'Predicted price range for your listing is: €{low_range}\
+                     - €{high_range}'
         except Exception as e:
             errorMessage = "Error processing input: {}".format(e)
             return errorMessage
