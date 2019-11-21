@@ -39,7 +39,7 @@ def create_app():
             # The Mean Absolute Error (MAE) is 19
             # The Mean Absolute Percentage Error (MAPE) is 36.62%
             # Use MAPE for low predicted prices and MAE for higher prices
-            error = prediction*.3662 if prediction*.3662<19 else 19
+            error = prediction*.3662 if prediction*.3662 < 19 else 19
             low_range = round(prediction-error)
             if low_range < 1:
                 low_range = 1
