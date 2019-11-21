@@ -41,8 +41,8 @@ def create_app():
             if low_range < 1:
                 low_range = 1
             high_range = prediction+error
-            return f'''Predicted price range for your listing is:
-                   €{low_range}-€{high_range}'''
+            price_range = 'Predicted price range for your listing is:'
+            return price_range + f'€{low_range}-€{high_range}'
         except Exception as e:
             errorMessage = "Error processing input: {}".format(e)
             return errorMessage
