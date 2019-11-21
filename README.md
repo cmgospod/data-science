@@ -35,6 +35,7 @@ To test the endpoint, create and run the following python code, replacing #'s wi
 
 ```
 import requests
+import json
 dictToSend = {
     "neighborhood_group":#,
     "neighborhood":#,
@@ -45,7 +46,7 @@ dictToSend = {
     "bathroom_number":#,
     "bedroom_number":#,
 }
-res = requests.post('http://127.0.0.1:5000/input', data=dictToSend)
+res = requests.post('http://127.0.0.1:5000/input', data=json.dumps(dictToSend))
 print ('Response from server:',res.text)
 ```
 

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from joblib import load
 import pandas as pd
+import json
 
 pipeline = load('MODEL/model.joblib')
 
@@ -16,15 +17,16 @@ def create_app():
     @app.route('/input', methods=['POST'])
     def retrieval():
         try:
-            neighbourhood_group = int(request.values['neighborhood_group'])
-            neighbourhood = int(request.values['neighborhood'])
-            room_type = int(request.values['room_type'])
-            minimum_nights = int(request.values['minimum_nights'])
+            requestJson = json.loads(request.data)
+            neighbourhood_group = int(requestJson['neighborhood_group'])
+            neighbourhood = int(requestJson['neighborhood'])
+            room_type = int(requestJson['room_type'])
+            minimum_nights = int(requestJson['minimum_nights'])
             calculated_host_listings_count = int(
-                request.values['calculated_host_listings_count'])
-            availability_365 = int(request.values['availability_of_year'])
-            bathrooms = int(request.values['bathroom_number'])
-            bedrooms = int(request.values['bedroom_number'])
+                requestJson['calculated_host_listings_count'])
+            availability_365 = int(requestJson['availability_of_year'])
+            bathrooms = int(requestJson['bathroom_number'])
+            bedrooms = int(requestJson['bedroom_number'])
             predict_thing = pd.DataFrame(
                 columns=['neighbourhood_group', 'neighbourhood', 'room_type',
                         'minimum_nights', 'calculated_host_listings_count',
