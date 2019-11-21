@@ -2,7 +2,7 @@
 
 ## Usage (Production)
 
-Send a POST request to https://hostify.herokuapp.com/input passing in the following data object:
+Send a POST request to https://hostify.herokuapp.com/input passing in the following JSON object:
 
 ```
 {
