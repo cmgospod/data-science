@@ -22,7 +22,7 @@ Replace the #'s with relevant numbers. The `neighborhood_group`, `neighborhood`,
 If configured correctly, you'll receive the following **string** as the output, replacing `[min-price]` and `[max-price]` with the corresponding numbers.
 
 ```
-Predicted price range for your listing is: €[min-price] - €[max-price]
+Predicted price range for your listing is: €[min-price]-€[max-price]
 ```
 
 ## Usage (Development)

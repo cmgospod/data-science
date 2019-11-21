@@ -29,11 +29,11 @@ def create_app():
             bedrooms = int(requestJson['bedroom_number'])
             predict_thing = pd.DataFrame(
                 columns=['neighbourhood_group', 'neighbourhood', 'room_type',
-                        'minimum_nights', 'calculated_host_listings_count',
-                        'availability_365', 'bathrooms', 'bedrooms'],
+                         'minimum_nights', 'calculated_host_listings_count',
+                         'availability_365', 'bathrooms', 'bedrooms'],
                 data=[[neighbourhood_group, neighbourhood, room_type,
-                    minimum_nights, calculated_host_listings_count,
-                    availability_365, bathrooms, bedrooms]]
+                      minimum_nights, calculated_host_listings_count,
+                      availability_365, bathrooms, bedrooms]]
                 )
             prediction = int(pipeline.predict(predict_thing)[0].round())
             error = 19
@@ -41,8 +41,8 @@ def create_app():
             if low_range < 1:
                 low_range = 1
             high_range = prediction+error
-            return f'Predicted price range for your listing is: €{low_range}\
-                     - €{high_range}'
+            return f'Predicted price range for your listing is: \
+                   €{low_range}-€{high_range}'
         except Exception as e:
             errorMessage = "Error processing input: {}".format(e)
             return errorMessage
