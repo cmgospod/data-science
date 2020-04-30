@@ -1,6 +1,6 @@
 # AirBnB Optimal Price Flask App
 
-## Usage (Production)
+## Usage
 
 Send a POST request to https://hostify.herokuapp.com/input passing in the following JSON object:
 
@@ -19,7 +19,7 @@ Send a POST request to https://hostify.herokuapp.com/input passing in the follow
 
 Replace the #'s with relevant numbers. The `neighborhood_group`, `neighborhood`, and `room_type` values need to be expressed numerically based on [these mappings](https://github.com/bw-airbnbprice3/data-science/tree/master/MODEL).
 
-If configured correctly, you'll receive the following **string** as the output, replacing `[min-price]` and `[max-price]` with the corresponding numbers.
+If configured correctly, you'll receive the following string as the output, replacing `[min-price]` and `[max-price]` with the corresponding numbers.
 
 ```
 Predicted price range for your listing is: €[min-price]-€[max-price]
